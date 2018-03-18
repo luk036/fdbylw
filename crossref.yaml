@@ -1,0 +1,23 @@
+---
+cref: False
+chapters: True
+chaptersDept: 2
+codeBlockCaptions: True
+figureTitle: "图 "
+tableTitle: "表 "
+listingTitle: "列表 "
+lofTitle: "## List of Figures"
+lotTitle: "## List of Tables"
+tableTemplate: "*$$tableTitle$$ $$i$$*$$titleDelim$$ $$t$$"
+autoSectionLabels: True
+figPrefix:
+  - "图"
+eqnPrefix:
+  - "公式"
+tblPrefix:
+  - "表"
+lstPrefix:
+  - "列表"
+secPrefix:
+  - "§"
+...
