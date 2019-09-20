@@ -1,4 +1,4 @@
----
+﻿---
 author: '陆伟成'
 title: '如何用 Markdown + Pandoc 写毕业论文'
 date: '2018-03-18'
@@ -142,7 +142,7 @@ Display equations are labelled and numbered:
 $$P(x) = \sum_i a_i x^i$$ {#eq:eqn1}
 
 (source)
-```
+```markdown
 $$P(x) = \sum_i a_i x^i$$ {#eq:eqn1}
 ```
 
