@@ -563,7 +563,7 @@ json schema有一系列的关键字，每个关键字有不同的功能。关键
 §3.2 转换方案研究
 ---------------
 
-###§3.2.1 Liberty与json格式对比
+### §3.2.1 Liberty与json格式对比
 
 上节中给出了与本文有关的基本知识。介绍了Liberty和json的格式规范，从结构和表达形式上分别总结了两种格式的范式。
 
@@ -682,7 +682,7 @@ curve_y (1, "0.8, 0.5, 0.2");
 §3.3 转换程序设计
 ---------------
 
-###§3.3.1 格式转换概论
+### §3.3.1 格式转换概论
 
 通常地讲，格式转换器属于编译器，它将原始语言转换成目标语言。但是两者的目的有所区别（编译的目的是形成可执行程序）。格式转换的过程是编译过程的一部分，其构成是词法分析、语法分析、改变格式并输出。
 其中，词法分析的目标是将输入的字符序列转换为标记(token)序列，供后续步骤使用。
@@ -1203,5 +1203,5 @@ json-schema-core.http://json-schema.org/latest/json-schema-core.html
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU4MTk4NjM5OF19
+eyJoaXN0b3J5IjpbODI0MjYxNDU0LC01ODE5ODYzOThdfQ==
 -->
