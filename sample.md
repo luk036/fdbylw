@@ -161,7 +161,7 @@ json的格式范式如下：
 §2.2 Liberty格式介绍
 -------------------
 
-###§2.2.1 基本格式总览
+### §2.2.1 基本格式总览
 
 例展示了Liberty的基本格式。从[@lst:libExample]中可以看出其基本特征：
 
@@ -327,7 +327,7 @@ define (attribute_name, group_name, attribute_type) ;
 define (bork, pin, string) ;
 ```
 
-###§2.2.3 值的种类
+### §2.2.3 值的种类
 
 首先定义值为简单属性冒号后的属性值以及复杂属性和定义声明中列表的一项。
 则Liberty中值的种类有以下几种：
@@ -340,7 +340,7 @@ define (bork, pin, string) ;
 
 需要说明的是，这里的枚举表现形式是字符串，但要求取值只能在枚举列表中选其一。因此这里的枚举包含了布尔(boolean)类型。在Liberty中，枚举类型一般不加双引号。但有双引号时仍然合法。
 
-###§2.2.4 注释
+### §2.2.4 注释
 
 Liberty支持C风格的注释。具体为一下两种：
 
@@ -361,7 +361,7 @@ comment...
 */
 ```
 
-###§2.2.5 格式总结
+### §2.2.5 格式总结
 从文本格式角度，总结Liberty格式范式如下：
 
 整个文件LIB由若干个组(group)组成
@@ -1203,5 +1203,5 @@ json-schema-core.http://json-schema.org/latest/json-schema-core.html
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTE3MjQ4NDQsLTU4MTk4NjM5OF19
+eyJoaXN0b3J5IjpbMTUxMzMyNjYxOCwtNTgxOTg2Mzk4XX0=
 -->
