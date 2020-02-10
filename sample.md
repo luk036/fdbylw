@@ -418,7 +418,7 @@ comment...
 §2.3 json schema介绍
 -------------------
 
-###§2.3.1 json schema概览
+### §2.3.1 json schema概览
 
 json schema是检验json数据结构的强有力工具，它可以规定一个json数据的结构层次，必要的键以及值的种类等。下面展示了一个json schema以及它的功能。
 
@@ -473,7 +473,7 @@ json schema是检验json数据结构的强有力工具，它可以规定一个js
 ```
 以此json schema来检查这两个json，得到的结果为数据1为合法，数据2为不合法。原因是：schema中规定了键"address"的值是一个对象，而数据1中"address"的值为一个字符串。而数据2不但满足了此规定，同时满足了schema中对"address"的值对象中每个键值对的具体要求。
 
-###§2.3.2 json schema关键字
+### §2.3.2 json schema关键字
 
 json schema有一系列的关键字，每个关键字有不同的功能。关键字发挥了schema的作用。以下列举json schema关键字及其具体功能说明。
 
@@ -550,13 +550,13 @@ json schema有一系列的关键字，每个关键字有不同的功能。关键
 §3.1 需求分析
 ------------
 
-###§3.1.1 功能需求
+### §3.1.1 功能需求
 
 本程序的功能为格式的转换，将.lib文件转换为Liberty。可以单独使用，也可以被其他脚本调用。考虑到这一点，程序应当为命令行程序。
 为了满足管道功能，应当可以选择将结果打到标准输出，同时也应当可以指定输出到文件。
 为了使程序易用，应当能够显示帮助内容。
 
-###§3.1.2 输入输出
+### §3.1.2 输入输出
 
 所有选项通过程序入口参数实现。用户可以指定输入输出文件，以及程序功能选项。选项包括是否保留注释、是否输出到文件、是否显示帮助内容。
 
@@ -593,7 +593,7 @@ json schema有一系列的关键字，每个关键字有不同的功能。关键
 * Liberty使用圆括号(())来标记数组；而json使用方括号([])。
 * Liberty中空格符和回车符作为关键字；而json中不是。
 
-###§3.2.2 转换方案
+### §3.2.2 转换方案
 
 根据以上分析的Liberty和json格式的区别，提出格式转换的方案如下：
 
@@ -1203,5 +1203,5 @@ json-schema-core.http://json-schema.org/latest/json-schema-core.html
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTM1MDAzMDE4LC01ODE5ODYzOThdfQ==
+eyJoaXN0b3J5IjpbLTExOTE3MjQ4NDQsLTU4MTk4NjM5OF19
 -->
