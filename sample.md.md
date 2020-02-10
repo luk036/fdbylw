@@ -1,7 +1,8 @@
-% 毕业论文
-% 标题：EDA数据转换标准化探索
-% 使用json格式表示Liberty文件的探索和通用Liberty到json格式转换程序实现
-
+﻿---
+author: '黄某某'
+title: 'EDA数据转换标准化探索'
+date: '2018-03-18'
+...
 
 摘要 {-}
 ====
@@ -1202,5 +1203,5 @@ json-schema-core.http://json-schema.org/latest/json-schema-core.html
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgxMjI5OTZdfQ==
+eyJoaXN0b3J5IjpbLTU4MTk4NjM5OF19
 -->
