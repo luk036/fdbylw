@@ -215,6 +215,8 @@ To sum up, subfigures are made with a div having a figure id. Contents of said d
 第五章 文献综述
 ==============
 
+例子：
+
 王国成阐述了大数据的特性变迁过程[@王国成2017从]。
 
 其他学者讲述了大数据的价值和处理方式[@于晓龙2014大数据的经济学涵义及价值创造机制;@徐计2015基于粒计算的大数据处理]。
@@ -257,3 +259,6 @@ thanks everyone
 ========
 
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTM2MDE3MjU0MF19
+-->
