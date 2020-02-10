@@ -226,7 +226,7 @@ library (name) {
 }
 ```
 
-###§2.2.2 声明(Statement)
+### §2.2.2 声明(Statement)
 
 Liberty有三种声明，分别为：
 
@@ -1203,5 +1203,5 @@ json-schema-core.http://json-schema.org/latest/json-schema-core.html
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUxMzMyNjYxOCwtNTgxOTg2Mzk4XX0=
+eyJoaXN0b3J5IjpbLTE1OTk1NjUxNTQsLTU4MTk4NjM5OF19
 -->
