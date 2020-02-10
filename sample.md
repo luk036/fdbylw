@@ -723,7 +723,7 @@ capacitive_load_unit (1.0, "ff");
 
 ![diagram_format_change](E:\库\documents\大四下\PJ\doc\output_sources\Diagram_Lexical_analysis_.png){#fig:lexicalAnalysis}
 
-###§3.3.2 正则表达式和有限状态自动机
+### §3.3.2 正则表达式和有限状态自动机
 
 词法分析通常基于有限状态自动机(FSM)。有限状态自动机是一个数学模型，表示有限个状态以及状态之间转移的动作等行为。通过有限自动机可以实现字符串匹配等功能。
 
@@ -1203,5 +1203,5 @@ json-schema-core.http://json-schema.org/latest/json-schema-core.html
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODI0MjYxNDU0LC01ODE5ODYzOThdfQ==
+eyJoaXN0b3J5IjpbNTM1MDAzMDE4LC01ODE5ODYzOThdfQ==
 -->
