@@ -15,7 +15,7 @@ Liberty虽是目前的标准，但它由于发明时间早，经过多次修改�
 
 本文研究了Liberty格式标准，设计实现了通用的将Liberty转成json的程序；并针对实际的情况，介绍json schema的应用。
 
-**关键词：**Liberty，json，json schema，格式转换。
+**关键词：** Liberty，json，json schema，格式转换。
 
 Abstract {-}
 ========
@@ -28,12 +28,12 @@ Liberty is current standard, but because is has been invented for many years. Af
 
 This paper studies the Liberty format standard, designed and implemented a generic liberty-to-json converter, and introduce json schema in a particular application environment.
 
-**Keywords:**Liberty, json, json schema, format converter.
+**Keywords:** Liberty, json, json schema, format converter.
 
 第一章 绪论 {#sec:sec1}
 ==========
 
-§ 1.1 研究意义和目的
+§1.1 研究意义和目的
 -------------------
 
 集成电路设计中，无论是定制电路设计，基于标准单元的半定制设计，还是基于FPGA的半定制设计等，基本单元的特性描述都是EDA流程中必不可少的信息。它使各个EDA工具能够得到基本单元的输入负载、延迟、功耗等信息。使得EDA流程能够准确地进行。
@@ -69,7 +69,7 @@ json schema是用json格式来书写的，用于定义json数据文件的结构�
 §2.1 json格式介绍
 ----------------
 
-###§2.1.1 json基本格式总览
+### §2.1.1 json基本格式总览
 
 [@lst:jsonExample]展示了json的基本格式。例子中可以看出json以两种基本结构组织起来：
 
@@ -87,25 +87,29 @@ json schema是用json格式来书写的，用于定义json数据文件的结构�
 }
 ```
 
-
-###§2.1.2 格式范式
+### §2.1.2 格式范式
 
 json的格式范式如下：
 
 **object:**
 
+```ebnf
     object ::= '{' string ':' value ( ',' string ':' value )* '}'
+```
 
 ![BNF_object](E:\库\documents\大四下\PJ\doc\output_sources\diagram_json\object.png)
 
 **array:**
 
+```ebnf
     array ::= '[' ( value ( ',' value )* )? ']'
+```
 
 ![BNF_array](E:\库\documents\大四下\PJ\doc\output_sources\diagram_json\array.png)
 
 **value:**
 
+```ebnf
     value    ::= string
            | number
            | object
@@ -113,11 +117,13 @@ json的格式范式如下：
            | true
            | false
            | null
+```
 
 ![BNF_value](E:\库\documents\大四下\PJ\doc\output_sources\diagram_json\value.png)
 
 **string:**
 
+```ebnf
     string ::= '"' ( 
                         (   ( "any UNICODE character except double_quote or back_slash or control character" )
                             |   
@@ -126,12 +132,15 @@ json的格式范式如下：
                             ) 
                         )+
                     )? '"'
+```
 
 ![BNF_string](E:\库\documents\大四下\PJ\doc\output_sources\diagram_json\string.png)
 
 **number:**
 
+```ebnf
     number ::= ('-')? ( (digit1-9 (digit)*) | '0' ) ( '.' (digit)+ )? ('e' | 'E') ('+' | '-')? (digit)+
+```
 
 ![BNF_number](E:\库\documents\大四下\PJ\doc\output_sources\diagram_json\number.png)
 
@@ -139,13 +148,16 @@ json的格式范式如下：
 
 **digit:**
 
+```ebnf
     digit    ::= digit1-9
            | '0'
+```
 
 ![BNF_digit](E:\库\documents\大四下\PJ\doc\output_sources\diagram_json\digit.png)
 
 **digit1-9:**
 
+```ebnf
     digit1-9 ::= '1'
            | '2'
            | '3'
@@ -155,6 +167,7 @@ json的格式范式如下：
            | '7'
            | '8'
            | '9'
+```
 
 ![BNF_digit1-9](E:\库\documents\大四下\PJ\doc\output_sources\diagram_json\digit1-9.png)
 
@@ -257,14 +270,13 @@ group_type (name) {
 [@lst:libExampleGroup]中声明了pin组A：
 
 
-```{#lst:libExampleGroup .c caption=}
+```{#lst:libExampleGroup .c}
 pin(A) {
 
 ... pin group statements ...
 
 }
 ```
-
 
 2. 属性声明
 
@@ -376,7 +388,9 @@ comment...
 
 **group:**
 
+```ebnf
     group    ::= key '(' array ')' ( ';' | '{' ( attribute | group )+ '}' )
+```
 
 ![BNF_group](E:\库\documents\大四下\PJ\doc\output_sources\diagram_lib\group.png)
 
@@ -384,7 +398,9 @@ comment...
 
 **attribute**
 
+```ebnf
     attribute ::= key ':' value ';'
+```
 
 ![BNF_attribute](E:\库\documents\大四下\PJ\doc\output_sources\diagram_lib\attribute.png)
 
@@ -392,24 +408,30 @@ comment...
 
 **array**
 
+```ebnf
     array    ::= value ( ',' value )*
            | array ( ',' array )*
+```
 
 ![BNF_attribute](E:\库\documents\大四下\PJ\doc\output_sources\diagram_lib\array.png)
 
 **value**
 
+```ebnf
     value    ::= string
            | enum
            | int
            | float
            | null
+```
 
 ![BNF_attribute](E:\库\documents\大四下\PJ\doc\output_sources\diagram_lib\value.png)
 
 **key**
 
+```ebnf
     key      ::= string
+```
 
 ![BNF_attribute](E:\库\documents\大四下\PJ\doc\output_sources\diagram_lib\key.png)
 
@@ -424,7 +446,7 @@ json schema是检验json数据结构的强有力工具，它可以规定一个js
 
 有一json schema 如[@lst:schemaExample]：
 
-```{#lst:schemaExample .json caption=}
+```{.json #lst:schemaExample}
 {
   "type": "object",
   "properties": {
@@ -471,6 +493,7 @@ json schema是检验json数据结构的强有力工具，它可以规定一个js
   }
 }
 ```
+
 以此json schema来检查这两个json，得到的结果为数据1为合法，数据2为不合法。原因是：schema中规定了键"address"的值是一个对象，而数据1中"address"的值为一个字符串。而数据2不但满足了此规定，同时满足了schema中对"address"的值对象中每个键值对的具体要求。
 
 ### §2.3.2 json schema关键字
@@ -482,7 +505,7 @@ json schema有一系列的关键字，每个关键字有不同的功能。关键
 * enum。其值必须是数组，必须包含至少一个元素，每个元素必须互不相同。规定了键值对值的可取范围。若值在enum中未出现，则不合法。
 * type。其值可以是字符串或数组。若是数组，数组元素必须是字符串，数组元素必须互不相同。字符串的值只能取string, number, integer, object, array, boolean, null中的一个。type关键字规定了键值对值的类型。特殊地，integer所允许的值的集合是number所允许值的集合的一个子集。其允许值集合符合的范式为：
 
-```
+```ebnf
     integer     ::= (-)? ( ( (digit1-9 (digit)*) ) | '0' )
     digit       ::= digit1-9
                 | '0'
@@ -601,7 +624,7 @@ json schema有一系列的关键字，每个关键字有不同的功能。关键
 
 Liberty的组格式如[@lst:libG]：
 
-```{#lst:libG .c caption=}
+```{.c #lst:libG caption=}
 groupA(nameA)
 {
     /* key-values*/
@@ -610,7 +633,7 @@ groupA(nameA)
 
 从json格式中的对象来考虑，它的内容实际上可以用json表示如[@lst:jsonG0]：
 
-```{#lst:jsonG0 .json caption=}
+```{.json #lst:jsonG0 caption=}
 "groupA" : 
 {
     "name" : "nameA",
@@ -620,6 +643,7 @@ groupA(nameA)
     }
 }
 ```
+
 使用"name"作为特殊的关键字，其值为group的名称。然而可以看到这种形式不够简洁，增加了层次。可以进行简化，如[@lst:jsonG1]：
 
 ```{#lst:jsonG1 .json caption=}
@@ -629,13 +653,14 @@ groupA(nameA)
     /* other key-values */
 }
 ```
+
 注意实际情况中name可能是字符串或数组，但由于它作为值存在，为数组或字符串都是合法的。
 
 2. 简单属性
 
-Liberty的简单属性格式如[@lst:libS0]：
+Liberty的简单属性格式如下：
 
-```{#lst:libS0 .c caption=}
+```c
 key1 : "string1";
 key2 : string2;
 key3 : 12450;
@@ -736,7 +761,7 @@ capacitive_load_unit (1.0, "ff");
 
 正则表达式在功能上还有引用、贪婪与非贪婪匹配等功能。引用一个子字符串是指，该子字符串要与前面某段子表达式匹配到的字符串相同。贪婪与非贪婪匹配时数量限定的方式。贪婪模式下，限定次数为某数量以上时，会匹配尽量多的重复次数，反之则会匹配尽量少的重复次数。使用中合理利用正则的这一类功能，可以满足不同的要求。
 
-###§3.3.3 核心功能的实现
+### §3.3.3 核心功能的实现
 
 参照编译的“从词法分析到语法分析再进行格式转换”的步骤即可以实现格式转换，但是由于将处理过程分成了三个步骤进行，程序需要对整个序列进行三次处理。考虑到实际中使用的Liberty文件的规模很大，三次处理的效率低下，会导致执行时间过长。
 为了解决这一问题，这里采取的做法是三个步骤在一次扫描中同时完成。核心功能的实现方法详述如下：
@@ -1201,7 +1226,3 @@ json-schema-core.http://json-schema.org/latest/json-schema-core.html
 
 [14] JSON Schema Validator.http://www.jsonschemavalidator.net/
 
-
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTk1NjUxNTQsLTU4MTk4NjM5OF19
--->
