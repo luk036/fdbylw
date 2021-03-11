@@ -2,6 +2,8 @@
 author: '陆某某'
 title: '如何用 Markdown + Pandoc 写毕业论文'
 date: '2018-03-18'
+bibliography: ['reference.bib']
+csl: [chinese-gb7714-2005-numeric.csl] 
 ...
 
 摘要 {-}
@@ -14,7 +16,7 @@ date: '2018-03-18'
 Abstract {-}
 ========
 
-This is a tutorial file for writing a undergraduate thesis using Markdown and `pandoc`.
+This is a tutorial file for writing a undergraduate thesis using Markdown and `pandoc`
 
 **Keywords:** pandoc, pandoc-crossref markdown
 
@@ -25,7 +27,7 @@ This is a tutorial file for writing a undergraduate thesis using Markdown and `p
 §1.1 `pandoc`
 -------------
 
-Pandoc is a Haskell library for converting from one markup format to another, and a command-line tool that uses this library. It can read Markdown and write Word docx.
+Pandoc is a Haskell library for converting from one markup format to another, and a command-line tool that uses this library. It can read Markdown and write Word docx.  [@王国成2017从]
 
 §1.2 `pandoc-crossref` filter
 -----------------------------
